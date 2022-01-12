@@ -54,6 +54,9 @@
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>./libs/UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
+      <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>./libs/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UnityWebRequestWWWModule">
       <HintPath>./libs/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
     </Reference>
