@@ -75,6 +75,7 @@ namespace Oxide.Plugins
         #endregion
 
         #region OxideHooks
+
         void Unload()
         {
             foreach (SleepingBag[] bagsToRemove in bags.Values)
@@ -110,6 +111,7 @@ namespace Oxide.Plugins
             }
             return null;
         }
+
         private void OnServerInitialized()
         {
             if (ConVar.Server.level == "HapisIsland" && config.outPostRespawn)
@@ -137,6 +139,7 @@ namespace Oxide.Plugins
             foreach (BasePlayer player in BasePlayer.activePlayerList)
                 OnPlayerConnected(player);
         }
+
         private void OnPlayerConnected(BasePlayer d)
         {
             int count = positions.Count, idx = -1;
@@ -156,6 +159,7 @@ namespace Oxide.Plugins
                 SleepingBag.sleepingBags.Add(bag);
             }
         }
+
 
         private void OnPlayerDisconnected(BasePlayer d)
         {
@@ -180,6 +184,9 @@ namespace Oxide.Plugins
                 RaycastHit rayHit;
                 Vector3 resultPositions = pos + (Random.insideUnitSphere * radius);
                 resultPositions.y = pos.y + 100f;
+                Puts("raycast hit?");
+                Puts(Physics.Raycast(resultPositions, Vector3.down, out rayHit, 100, Layer, QueryTriggerInteraction.Ignore).ToString());
+                Puts(rayHit.collider.name);
                 if (Physics.Raycast(resultPositions, Vector3.down, out rayHit, 100, Layer, QueryTriggerInteraction.Ignore))
                 {
                     if (rayHit.collider is TerrainCollider)
@@ -189,6 +196,7 @@ namespace Oxide.Plugins
                         if (coliderName != null)
                             for (int a = 0; a < coliderName.Length; a++)
                             {
+                                Puts(rayHit.collider.name);
                                 if (rayHit.collider.name.Contains(coliderName[a]))
                                     targetPosList.Add(rayHit.point);
                             }
