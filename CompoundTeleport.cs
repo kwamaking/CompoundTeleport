@@ -194,6 +194,7 @@ namespace Oxide.Plugins
                 };
             }
         }
+
         private class TeleportLocation
         {
             [JsonProperty("name")]
