@@ -152,7 +152,7 @@ namespace Oxide.Plugins
                 }
             }
 
-            Puts($"Failed to find a spawn location for {player.displayName}, using default spawn.");
+            Puts($"Failed to find a teleport location for {player.displayName}, using default spawn.");
 
             return ServerMgr.FindSpawnPoint(player).pos;
         }
