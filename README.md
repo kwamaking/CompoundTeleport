@@ -2,7 +2,7 @@
 
 Teleport through the death screen to Bandit Camp, Outpost, or any configured monument.
 
-This plugin will do it's best to find a valid teleport position in a given monument prefab. If you've given a prefab and it can't find a valid position, it will use the default player spawn position.
+This plugin will do its best to find a valid teleport position in a given monument prefab. If you've given a prefab and it can't find a valid position, it will use the default player spawn position.
 
 I've had requests to be able to generate custom teleport locations with all of this same functionality, and while I could do that, I think it goes beyond the scope of this plugin and enters into areas that other plugins can already facilitate.
 
