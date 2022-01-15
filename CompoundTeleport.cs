@@ -60,6 +60,8 @@ namespace Oxide.Plugins
 
         private void OnPlayerRespawn(BasePlayer player, SleepingBag bag)
         {
+            if (!permission.UserHasPermission(player.UserIDString, UsePermission)) return;
+
             if (!playerTeleportLocations.ContainsKey(player.userID)) return;
 
             if (playerTeleportLocations[player.userID].Any(b => b.net.ID == bag.net.ID))
