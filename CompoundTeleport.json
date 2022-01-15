@@ -1,7 +1,34 @@
 {
-  "Sleeping bag Cooldown": 150,
-  "The opportunity respawn in a outpost": true,
-  "Name bag outpost": "outpost",
-  "The opportunity respawn in a Bandit Town": true,
-  "Name bag Bandit Town": "bandit"
+  "teleportLocations": [
+    {
+      "name": "Outpost",
+      "timer": 150,
+      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/medium/compound.prefab",
+      "enabled": true
+    },
+    {
+      "name": "Bandit Camp",
+      "timer": 150,
+      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/medium/bandit_town.prefab",
+      "enabled": true
+    },
+    {
+      "name": "Fishing Village",
+      "timer": 150,
+      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_a.prefab",
+      "enabled": true
+    },
+    {
+      "name": "Fishing Village",
+      "timer": 150,
+      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_b.prefab",
+      "enabled": true
+    },
+    {
+      "name": "Fishing Village",
+      "timer": 150,
+      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_c.prefab",
+      "enabled": true
+    }
+  ]
 }
