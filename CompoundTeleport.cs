@@ -178,6 +178,7 @@ namespace Oxide.Plugins
         #endregion
 
         #region Config Classes
+
         private class CompoundTeleportConfiguration
         {
             [JsonProperty("teleportLocations")]
