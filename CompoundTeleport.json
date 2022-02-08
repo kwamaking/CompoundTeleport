@@ -1,4 +1,5 @@
 {
+  "removeHostility": true,
   "teleportLocations": [
     {
       "name": "Outpost",
@@ -10,24 +11,6 @@
       "name": "Bandit Camp",
       "timer": 150,
       "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/medium/bandit_town.prefab",
-      "enabled": true
-    },
-    {
-      "name": "Fishing Village",
-      "timer": 150,
-      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_a.prefab",
-      "enabled": true
-    },
-    {
-      "name": "Fishing Village",
-      "timer": 150,
-      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_b.prefab",
-      "enabled": true
-    },
-    {
-      "name": "Fishing Village",
-      "timer": 150,
-      "monumentPrefab": "assets/bundled/prefabs/autospawn/monument/fishing_village/fishing_village_c.prefab",
       "enabled": true
     }
   ]

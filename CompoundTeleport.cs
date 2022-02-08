@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Oxide.Plugins
 {
-    [Info("Compound Teleport", "kwamaking", "2.0.0")]
+    [Info("Compound Teleport", "kwamaking", "2.0.1")]
     [Description("Teleport through the death screen to Bandit Camp, Outpost, or any configured monument.")]
     class CompoundTeleport : RustPlugin
     {
@@ -65,7 +65,10 @@ namespace Oxide.Plugins
             if (!playerTeleportLocations.ContainsKey(player.userID)) return;
 
             if (playerTeleportLocations[player.userID].Any(b => b.net.ID == bag.net.ID))
+            {
                 bag.transform.position = AttemptToFindTeleportPosition(player, bag.transform.position);
+                RemoveHostility(player);
+            }
         }
 
         void Unload()
@@ -80,6 +83,15 @@ namespace Oxide.Plugins
         #endregion
 
         #region Helpers
+
+        private void RemoveHostility(BasePlayer player)
+        {
+            if (player.IsHostile() && pluginConfiguration.removeHostility)
+            {
+                player.State.unHostileTimestamp = 0.0;
+                player.DirtyPlayerState();
+            }
+        }
 
         private void CreateTeleportLocationsForActivePlayers()
         {
@@ -183,6 +195,9 @@ namespace Oxide.Plugins
 
         private class CompoundTeleportConfiguration
         {
+            [JsonProperty("removeHostility")]
+            public bool removeHostility { get; set; }
+
             [JsonProperty("teleportLocations")]
             public List<TeleportLocation> teleportLocations { get; set; }
 
@@ -190,6 +205,7 @@ namespace Oxide.Plugins
             {
                 return new CompoundTeleportConfiguration
                 {
+                    removeHostility = true,
                     teleportLocations = TeleportLocation.BuildDefaultTeleportLocations()
                 };
             }
