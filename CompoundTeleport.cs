@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace Oxide.Plugins
 {
-    [Info("Compound Teleport", "kwamaking", "2.0.2")]
+    [Info("Compound Teleport", "kwamaking", "2.0.3")]
     [Description("Teleport through the death screen to Bandit Camp, Outpost, or any configured monument.")]
     class CompoundTeleport : RustPlugin
     {
